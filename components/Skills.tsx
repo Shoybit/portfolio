@@ -18,9 +18,9 @@ export default function Skills() {
     const loopedSkills = [...skills, ...skills];
 
     return (
-        <section id="skills" className="py-12 md:py-16 bg-[#161B22] ">
+        <section id="skills" className="py-12 md:py-16 bg-[#F4F5F7] dark:bg-[#161B22] ">
             <div className="container mx-auto px-4">
-                <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-white">
+                <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12  text-black dark:text-white">
                     My Skills<span className="text-[#F48267] ">.</span>
                 </h2>
 
@@ -29,7 +29,7 @@ export default function Skills() {
                         {loopedSkills.map((skill, index) => (
                             <div className="slide" key={`${skill.name}-${index}`}>
                                 <img src={skill.icon} alt={skill.name} />
-                            <p className="text-white!">{skill.name}</p>
+                            <p className="dark:text-white! text-black">{skill.name}</p>
                             </div>
                         ))}
                     </div>
