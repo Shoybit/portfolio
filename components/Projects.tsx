@@ -41,14 +41,26 @@ export default function Projects() {
 
 
                             <div className="flex justify-between">
-                                <Link href="https://kaleidoscopic-alpaca-0f5158.netlify.app/" className="text-primary hover:text-primary-dark font-medium text-xs md:text-sm flex items-center gap-1 group">
-                                    <i className="fas fa-external-link-alt group-hover:translate-x-1 transition-transform"></i>
-                                    <span>Live Demo</span>
-                                </Link>
-                                <Link href="https://github.com/Shoybit/Cleanliness--client" className="text-gray-600 dark:text-gray-400 hover:text-primary font-medium text-xs md:text-sm flex items-center gap-1 group">
-                                    <i className="fab fa-github group-hover:scale-110 transition-transform"></i>
-                                    <span>GitHub</span>
-                                </Link>
+                            <Link
+                                href="https://kaleidoscopic-alpaca-0f5158.netlify.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-primary hover:text-primary-dark font-medium text-xs md:text-sm flex items-center gap-1 group"
+                            >
+                                <i className="fas fa-external-link-alt group-hover:translate-x-1 transition-transform"></i>
+                                <span>Live Demo</span>
+                            </Link>
+
+                            <Link
+                                href="https://github.com/Shoybit/Cleanliness--client"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-600 dark:text-gray-400 hover:text-primary font-medium text-xs md:text-sm flex items-center gap-1 group"
+                            >
+                                <i className="fab fa-github group-hover:scale-110 transition-transform"></i>
+                                <span>GitHub</span>
+                            </Link>
+
                             </div>
                         </div>
                     </div>
@@ -84,14 +96,26 @@ Modern food ordering app with instant search, product browsing, and secure order
 
 
                             <div className="flex justify-between">
-                                <Link href="https://foodhub-one-neon.vercel.app/" className="text-primary hover:text-primary-dark font-medium text-xs md:text-sm flex items-center gap-1 group">
-                                    <i className="fas fa-external-link-alt group-hover:translate-x-1 transition-transform"></i>
-                                    <span>Live Demo</span>
-                                </Link>
-                                <Link href="https://github.com/Shoybit/FoodHub" className="text-gray-600 dark:text-gray-400 hover:text-primary font-medium text-xs md:text-sm flex items-center gap-1 group">
-                                    <i className="fab fa-github group-hover:scale-110 transition-transform"></i>
-                                    <span>GitHub</span>
-                                </Link>
+                            <Link
+                                href="https://foodhub-one-neon.vercel.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-primary hover:text-primary-dark font-medium text-xs md:text-sm flex items-center gap-1 group"
+                            >
+                                <i className="fas fa-external-link-alt group-hover:translate-x-1 transition-transform"></i>
+                                <span>Live Demo</span>
+                            </Link>
+
+                            <Link
+                                href="https://github.com/Shoybit/FoodHub"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-600 dark:text-gray-400 hover:text-primary font-medium text-xs md:text-sm flex items-center gap-1 group"
+                            >
+                                <i className="fab fa-github group-hover:scale-110 transition-transform"></i>
+                                <span>GitHub</span>
+                            </Link>
+
                             </div>
                         </div>
                     </div>
@@ -127,14 +151,26 @@ A modern, responsive web application built with React, Tailwind CSS, and Firebas
 
 
                             <div className="flex justify-between">
-                                <Link href="https://remarkable-torte-c4c438.netlify.app/" className="text-primary hover:text-primary-dark font-medium text-xs md:text-sm flex items-center gap-1 group">
-                                    <i className="fas fa-external-link-alt group-hover:translate-x-1 transition-transform"></i>
-                                    <span>Live Demo</span>
-                                </Link>
-                                <Link href="https://github.com/Shoybit/Green-Nest" className="text-gray-600 dark:text-gray-400 hover:text-primary font-medium text-xs md:text-sm flex items-center gap-1 group">
-                                    <i className="fab fa-github group-hover:scale-110 transition-transform"></i>
-                                    <span>GitHub</span>
-                                </Link>
+                            <Link
+                                href="https://remarkable-torte-c4c438.netlify.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-primary hover:text-primary-dark font-medium text-xs md:text-sm flex items-center gap-1 group"
+                            >
+                                <i className="fas fa-external-link-alt group-hover:translate-x-1 transition-transform"></i>
+                                <span>Live Demo</span>
+                            </Link>
+
+                            <Link
+                                href="https://github.com/Shoybit/Green-Nest"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-600 dark:text-gray-400 hover:text-primary font-medium text-xs md:text-sm flex items-center gap-1 group"
+                            >
+                                <i className="fab fa-github group-hover:scale-110 transition-transform"></i>
+                                <span>GitHub</span>
+                            </Link>
+
                             </div>
                         </div>
                     </div>
