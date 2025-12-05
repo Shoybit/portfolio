@@ -94,7 +94,7 @@ export default function Contact() {
                   <i className="fab fa-linkedin-in text-lg md:text-xl group-hover:scale-110 transition-transform"></i>
                 </a>
                 <a href="#" className="bg-gray-100 dark:bg-gray-800 p-2 md:p-3 rounded-full hover:bg-blue-400 hover:text-white hover-lift transition-all duration-300 group">
-                  <i className="fab fa-twitter text-lg md:text-xl group-hover:scale-110 transition-transform"></i>
+                <i className="fab fa-x text-lg md:text-xl group-hover:scale-110 transition-transform"></i>
                 </a>
               </div>
             </div>
