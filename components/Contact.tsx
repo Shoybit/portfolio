@@ -87,13 +87,13 @@ export default function Contact() {
             <div className="mt-6 md:mt-10">
               <h4 className="font-medium text-gray-900 dark:text-white mb-3 md:mb-4 text-sm md:text-base">Follow Me</h4>
               <div className="flex gap-3 md:gap-4">
-                <a href="#" className="bg-gray-100 dark:bg-gray-800 p-2 md:p-3 rounded-full hover:bg-gray-800 hover:text-white hover-lift transition-all duration-300 group">
+                <a href="https://github.com/Shoybit" className="bg-gray-100 dark:bg-gray-800 p-2 md:p-3 rounded-full hover:bg-gray-800 hover:text-white hover-lift transition-all duration-300 group">
                   <i className="fab fa-github text-lg md:text-xl group-hover:scale-110 transition-transform"></i>
                 </a>
-                <a href="#" className="bg-gray-100 dark:bg-gray-800 p-2 md:p-3 rounded-full hover:bg-blue-500 hover:text-white hover-lift transition-all duration-300 group">
+                <a href="https://www.linkedin.com/in/shoyaib-islam/" className="bg-gray-100 dark:bg-gray-800 p-2 md:p-3 rounded-full hover:bg-blue-500 hover:text-white hover-lift transition-all duration-300 group">
                   <i className="fab fa-linkedin-in text-lg md:text-xl group-hover:scale-110 transition-transform"></i>
                 </a>
-                <a href="#" className="bg-gray-100 dark:bg-gray-800 p-2 md:p-3 rounded-full hover:bg-blue-400 hover:text-white hover-lift transition-all duration-300 group">
+                <a href="https://x.com/shoybit07" className="bg-gray-100 dark:bg-gray-800 p-2 md:p-3 rounded-full hover:bg-blue-400 hover:text-white hover-lift transition-all duration-300 group">
                 <i className="fab fa-x text-lg md:text-xl group-hover:scale-110 transition-transform"></i>
                 </a>
               </div>
