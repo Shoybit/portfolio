@@ -53,7 +53,7 @@ export default function Hero() {
                     {/* Text Content */}
                     <div className="w-full lg:w-1/2 flex flex-col gap-4 md:gap-6 text-center lg:text-left order-2 lg:order-1">
                         <div className="relative inline-block self-center lg:self-start">
-                            <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 dark:text-white">
+                            <h2 className="text-3xl md:text-4xl font-semibold text-white dark:text-white">
                                 Hello<span className="text-primary">.</span>
                                 <div className="typewriter-container inline-block ml-2 w-[11ch] text-left">
                                     <span className="text-primary">{text}</span>
@@ -62,15 +62,15 @@ export default function Hero() {
                             <div className="absolute -bottom-2 nav-link h-0.5 w-16 bg-primary"></div>
                         </div>
 
-                        <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400">
+                        <p className="text-xl md:text-2xl text-gray-400 dark:text-gray-400">
                             I&apos;m <span className="text-primary font-semibold">Shoyaib</span>
                         </p>
 
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 dark:text-white transition-all duration-2000">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white dark:text-white transition-all duration-2000">
                             Front-end <span className="shimmer-text">Developer</span>
                         </h1>
 
-                        <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto lg:mx-0">
+                        <p className="text-base md:text-lg text-gray-400 dark:text-gray-400 max-w-xl mx-auto lg:mx-0">
                             I build modern full-stack web applications using MongoDB, Express.js, React.js, Next.js, and Node.js — creating clean, scalable solutions with seamless UI/UX and high-performance APIs. I focus on writing maintainable code, optimizing workflows, and delivering user-centric digital experiences.
                         </p>
 
@@ -96,7 +96,7 @@ export default function Hero() {
                     {/* Profile Image */}
                     <div className="w-full lg:w-1/3 flex justify-center items-center order-1 lg:order-2 mb-8 lg:mb-0">
                         <div className="profile-container relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[350px] lg:max-w-[400px]">
-                            <div className="relative rounded-full overflow-hidden w-full aspect-square border-4 md:border-8 border-white dark:border-gray-800 shadow-xl md:shadow-2xl">
+                            <div className="relative rounded-full overflow-hidden w-full aspect-square border-4 md:border-8 border-gray-800 dark:border-gray-800 shadow-xl md:shadow-2xl">
                                 <img
                                     alt="Portrait of Shoyaib Islam, a front-end developer."
                                     className="rounded-full object-cover w-full h-full transform hover:scale-105 transition-transform duration-500"
@@ -106,16 +106,16 @@ export default function Hero() {
                             </div>
 
                             {/* Tech icons */}
-                            <div className="absolute -top-4 -right-4 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg animate-bounce-slow">
+                            <div className="absolute -top-4 -right-4 bg-gray-800  dark:bg-gray-800 p-2 rounded-full shadow-lg animate-bounce-slow">
                                 <i className="fab fa-react text-blue-400 text-xl"></i>
                             </div>
-                            <div className="absolute -top-4 -left-4 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg animate-bounce-slow" style={{ animationDelay: "0.2s" }}>
+                            <div className="absolute -top-4 -left-4 bg-gray-800  dark:bg-gray-800 p-2 rounded-full shadow-lg animate-bounce-slow" style={{ animationDelay: "0.2s" }}>
                                 <i className="fab fa-node-js text-green-500 text-xl"></i>
                             </div>
-                            <div className="absolute -bottom-4 -right-4 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg animate-bounce-slow" style={{ animationDelay: "0.4s" }}>
+                            <div className="absolute -bottom-4 -right-4 bg-gray-800  dark:bg-gray-800 p-2 rounded-full shadow-lg animate-bounce-slow" style={{ animationDelay: "0.4s" }}>
                                 <i className="fab fa-js text-yellow-400 text-xl"></i>
                             </div>
-                            <div className="absolute -bottom-4 -left-4 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg animate-bounce-slow" style={{ animationDelay: "0.6s" }}>
+                            <div className="absolute -bottom-4 -left-4 bg-gray-800  dark:bg-gray-800 p-2 rounded-full shadow-lg animate-bounce-slow" style={{ animationDelay: "0.6s" }}>
                                 <i className="fas fa-database text-orange-500 text-xl"></i> 
                             </div>   
                         </div>

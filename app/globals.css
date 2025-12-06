@@ -3,9 +3,9 @@
 @theme {
   --font-display: var(--font-poppins), sans-serif;
 
-  --color-primary: #f48267;
+  --color-primary: #d86950;
   --color-primary-dark: #d86950;
-  --color-background-light: #f4f5f7;
+  --color-background-light: #161b22;
   --color-background-dark: #161b22;
 
   --animate-fade-in: fadeIn 0.5s ease-in-out;
@@ -228,7 +228,7 @@ html {
 }
 
 body {
-  @apply bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-300 antialiased;
+  @apply bg-background-dark dark:bg-background-dark font-display text-gray-300 dark:text-gray-300 antialiased;
 }
 
 /* Slider for Skills */
