@@ -11,7 +11,6 @@ A modern, responsive, and animated **developer portfolio** built with
 -   🎨 Tailwind CSS 4\
 -   🎞️ Framer Motion animations\
 -   📩 EmailJS contact form\
--   🌙 Dark/Light theme\
 -   📱 Fully responsive\
 -   🔥 Clean UI
 
