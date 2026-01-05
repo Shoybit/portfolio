@@ -1,181 +1,143 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
+import { FaExternalLinkAlt, FaGithub, FaEye } from 'react-icons/fa';
 
 export default function Projects() {
-    return (
-        <section id="projects" className="py-12 md:py-20 px-4 md:px-8 lg:px-16 bg-background-dark dark:bg-background-dark">
-            <div className="container mx-auto">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white dark:text-white mb-4">
+  // Updated links array with the new projects
+  const updatedProjects = [
+    {
+      name: "Cleanliness",
+      description: "Empowering communities to report, track, and contribute to a cleaner, safer environment. Fully-featured MERN stack application with responsive design, secure authentication, and contribution tracking.",
+      tech: ["Node.js", "Router", "MongoDB", "React.js", "Express.js", "JavaScript", "Firebase Auth", "TailwindCSS"],
+      live: "https://kaleidoscopic-alpaca-0f5158.netlify.app/",
+      details: "/projects/cleanliness",
+      github: "https://github.com/Shoybit/Cleanliness--client",
+      image: "/cleenkaleidoscopic-alpaca-0f5158-netlify-app-2025-12-05-23_03_48.jpg"
+    },
+    {
+      name: "FoodHub",
+      description: "FoodHub – Next.js Food Ordering Platform. Modern food ordering app with instant search, product browsing, and secure ordering, powered by Firebase Auth and MongoDB Atlas with a responsive UI.",
+      tech: ["Next.js", "JavaScript", "React", "Firebase", "Express", "MongoDB Atlas", "Vercel", "TailwindCSS"],
+      live: "https://foodhub-one-neon.vercel.app/",
+      details: "/projects/foodhub",
+      github: "https://github.com/Shoybit/FoodHub",
+      image: "/Screenshot 2025-12-05 225958.png"
+    },
+    {
+      name: "Green-Nest",
+      description: "GreenNest – Eco-Friendly Web App. A modern, responsive web application built with React, Tailwind CSS, and Firebase, designed to promote sustainable products and raise green lifestyle awareness.",
+      tech: ["React", "Tailwind", "Firebase", "DaisyUI", "ReactJS", "Toastify", "Spinner", "TailwindCSS"],
+      live: "https://remarkable-torte-c4c438.netlify.app/",
+      details: "/projects/green-nest",
+      github: "https://github.com/Shoybit/Green-Nest",
+      image: "/greennest.png"
+    }
+  ];
+
+  return (
+    <section id="projects" className="py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-linear-to-b from-gray-900 to-background-dark">
+      <div className="container mx-auto">
+        {/* Header with improved styling */}
+        <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white dark:text-white mb-8 md:mb-12">
                     My Projects<span className="text-primary">.</span>
                 </h2>
-                <p className="text-gray-400 dark:text-gray-400 text-center mb-8 md:mb-12 max-w-2xl mx-auto text-sm md:text-base">
-                    A selection of my favorite work. I&apos;m passionate about building clean, efficient, and user-friendly applications.
+          
+          
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
+            A selection of my favorite work. I&apos;m passionate about building clean, efficient, and user-friendly applications.
+          </p>
+        </div>
+
+        {/* Projects Grid with updated design */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {updatedProjects.map((project, index) => (
+            <div 
+              key={index}
+              className="group bg-linear-to-b from-gray-800/80 to-gray-900/90 rounded-2xl overflow-hidden shadow-xl hover:shadow-primary/20 transition-all duration-500 border border-gray-700/50 hover:border-primary/30"
+            >
+              {/* Image with overlay */}
+              <div className="h-48 md:h-56 overflow-hidden relative">
+                <div className="absolute inset-0 bg-linear-to-t from-gray-900 via-transparent to-transparent opacity-70 z-10"></div>
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                {/* Live badge */}
+                <div className="absolute top-4 right-4 z-20 bg-green-500/20 backdrop-blur-sm px-3 py-1 rounded-full border border-green-500/30">
+                  <span className="flex items-center gap-2 text-green-300 text-xs font-medium">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    Live
+                  </span>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                {/* Title */}
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
+                  {project.name}
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-300 mb-5 text-sm leading-relaxed line-clamp-3">
+                  {project.description}
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-
-                    {/* Project 2 */}
-                    <div className="project-card bg-gray-800 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
-                        <div className="h-40 md:h-48 overflow-hidden relative group">
-                            <img
-                                src="/cleenkaleidoscopic-alpaca-0f5158-netlify-app-2025-12-05-23_03_48.jpg"
-                                alt="Weather App"
-                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            />
-                            <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-all duration-500"></div>
-                        </div>
-                        <div className="p-4 md:p-6">
-                            <h3 className="text-lg md:text-xl font-bold text-white dark:text-white mb-2"> Cleanliness</h3>
-                            <p className="text-gray-400 dark:text-gray-400 mb-3 md:mb-4 text-sm md:text-base">Empowering communities to report, track, and contribute to a cleaner, safer environment. Fully-featured MERN stack application with responsive design, secure authentication, and contribution tracking.</p>
-
-                            <div className="flex flex-wrap gap-2 mb-3 md:mb-4">
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">Node.js</span>
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">Router</span>
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">MongoDB</span>
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">React.js</span>
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">Express.js</span>
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">JavaScript</span>
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">Firebase Auth</span>
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">TailwindCSS</span>
-                            </div>
-
-
-                            <div className="flex justify-between">
-                            <Link
-                                href="https://kaleidoscopic-alpaca-0f5158.netlify.app/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-primary hover:text-primary-dark font-medium text-xs md:text-sm flex items-center gap-1 group"
-                            >
-                                <i className="fas fa-external-link-alt group-hover:translate-x-1 transition-transform"></i>
-                                <span>Live Demo</span>
-                            </Link>
-
-                            <Link
-                                href="https://github.com/Shoybit/Cleanliness--client"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-gray-400 dark:text-gray-400 hover:text-primary font-medium text-xs md:text-sm flex items-center gap-1 group"
-                            >
-                                <i className="fab fa-github group-hover:scale-110 transition-transform"></i>
-                                <span>GitHub</span>
-                            </Link>
-
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                                        {/* Project 1 */}
-                    <div className="project-card bg-gray-800  dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
-                        <div className="h-40 md:h-48 overflow-hidden relative group">
-                            <img
-                                src="/Screenshot 2025-12-05 225958.png"
-                                alt="E-commerce Platform"
-                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            />
-                            <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-all duration-500"></div>
-                        </div>
-                        <div className="p-4 md:p-6">
-                            <h3 className="text-lg md:text-xl font-bold text-white dark:text-white mb-2">FoodHub</h3>
-                            <p className="text-gray-400 dark:text-gray-400 mb-3 md:mb-4 text-sm md:text-base">FoodHub – Next.js Food Ordering Platform
-Modern food ordering app with instant search, product browsing, and secure ordering, powered by Firebase Auth and MongoDB Atlas with a responsive UI.</p>
-
-                            <div className="flex flex-wrap gap-2 mb-3 md:mb-4">
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">Next.js</span>
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">JavaScript</span>
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">React</span>
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">Firebase</span>
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">Express</span>
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">MongoDB Atlas</span>
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">Vercel</span>
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">TailwindCSS</span>
-                            </div>
-
-
-                            <div className="flex justify-between">
-                            <Link
-                                href="https://foodhub-one-neon.vercel.app/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-primary hover:text-primary-dark font-medium text-xs md:text-sm flex items-center gap-1 group"
-                            >
-                                <i className="fas fa-external-link-alt group-hover:translate-x-1 transition-transform"></i>
-                                <span>Live Demo</span>
-                            </Link>
-
-                            <Link
-                                href="https://github.com/Shoybit/FoodHub"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-gray-400 dark:text-gray-400 hover:text-primary font-medium text-xs md:text-sm flex items-center gap-1 group"
-                            >
-                                <i className="fab fa-github group-hover:scale-110 transition-transform"></i>
-                                <span>GitHub</span>
-                            </Link>
-
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    {/* Project 3 */}
-                    <div className="project-card bg-gray-800  dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
-                        <div className="h-40 md:h-48 overflow-hidden relative group">
-                            <img
-                                src="/greennest.png"
-                                alt="Task Manager"
-                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            />
-                            <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-all duration-500"></div>
-                        </div>
-                        <div className="p-4 md:p-6">
-                            <h3 className="text-lg md:text-xl font-bold text-white dark:text-white mb-2">Green-Nest</h3>
-                            <p className="text-gray-400 dark:text-gray-400 mb-3 md:mb-4 text-sm md:text-base">GreenNest – Eco-Friendly Web App
-A modern, responsive web application built with React, Tailwind CSS, and Firebase, designed to promote sustainable products and raise green lifestyle awareness.</p>
-
-                            <div className="flex flex-wrap gap-2 mb-3 md:mb-4">
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">React</span>
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">Tailwind</span>
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">Firebase</span>
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">DaisyUI</span>
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">ReactJS</span>
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">Toastify</span>
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">Spinner</span>
-                            <span className="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">TailwindCSS</span>
-                            </div>
-
-
-                            <div className="flex justify-between">
-                            <Link
-                                href="https://remarkable-torte-c4c438.netlify.app/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-primary hover:text-primary-dark font-medium text-xs md:text-sm flex items-center gap-1 group"
-                            >
-                                <i className="fas fa-external-link-alt group-hover:translate-x-1 transition-transform"></i>
-                                <span>Live Demo</span>
-                            </Link>
-
-                            <Link
-                                href="https://github.com/Shoybit/Green-Nest"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-gray-400 dark:text-gray-400 hover:text-primary font-medium text-xs md:text-sm flex items-center gap-1 group"
-                            >
-                                <i className="fab fa-github group-hover:scale-110 transition-transform"></i>
-                                <span>GitHub</span>
-                            </Link>
-
-                            </div>
-                        </div>
-                    </div>
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tech.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="text-xs bg-gray-800/80 text-gray-300 px-3 py-1.5 rounded-full border border-gray-700 hover:border-primary/50 transition-colors"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
+
+                {/* Action Buttons */}
+                <div className="flex justify-between items-center">
+                  {/* Live Demo */}
+                  <Link
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/live flex items-center gap-2 text-primary hover:text-primary-light text-sm font-medium transition-colors"
+                  >
+                    <FaExternalLinkAlt className="text-sm" />
+                    <span>Live Demo</span>
+                  </Link>
+
+                  {/* View Details - Centered and prominent */}
+                  <Link
+                    href={project.details}
+                    className="group/details flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg transition-all duration-300"
+                  >
+                    <FaEye className="text-sm" />
+                    <span className="font-medium">View Details</span>
+                    <span className="group-hover/details:translate-x-1 transition-transform">→</span>
+                  </Link>
+
+                  {/* GitHub */}
+                  <Link
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/github flex items-center gap-2 text-gray-400 hover:text-white text-sm font-medium transition-colors"
+                  >
+                    <FaGithub className="text-base" />
+                    <span>GitHub</span>
+                  </Link>
+                </div>
+              </div>
             </div>
-        </section>
-    );
+          ))}
+        </div>
+
+
+      </div>
+    </section>
+  );
 }

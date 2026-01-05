@@ -90,7 +90,7 @@ export default function Contact() {
                 <a href="https://github.com/Shoybit" className="bg-gray-800 dark:bg-gray-800 p-2 md:p-3 rounded-full hover:bg-gray-800 hover:text-white hover-lift transition-all duration-300 group">
                   <i className="fab fa-github text-lg md:text-xl group-hover:scale-110 transition-transform"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/shoyaib-islam/" className="bg-gray-800 dark:bg-gray-800 p-2 md:p-3 rounded-full hover:bg-blue-500 hover:text-white hover-lift transition-all duration-300 group">
+                <a href="https://www.linkedin.com/in/shoyaib-islam1/" className="bg-gray-800 dark:bg-gray-800 p-2 md:p-3 rounded-full hover:bg-blue-500 hover:text-white hover-lift transition-all duration-300 group">
                   <i className="fab fa-linkedin-in text-lg md:text-xl group-hover:scale-110 transition-transform"></i>
                 </a>
                 <a href="https://x.com/shoybit07" className="bg-gray-800 dark:bg-gray-800 p-2 md:p-3 rounded-full hover:bg-blue-400 hover:text-white hover-lift transition-all duration-300 group">

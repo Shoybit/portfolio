@@ -6,17 +6,24 @@ export default function Footer() {
         <footer className="py-6 md:py-8 px-4 md:px-8 lg:px-16 bg-background-dark text-gray-400">
             <div className="container mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-center">
-
+                <div className='flex justify-center items-center gap-2'>
+                    
                     <div className="mb-4 md:mb-0 ">
                         
                     <Link href={'#home'}>
-                                          <div className='flex justify-center items-center gap-2'>
+                        <div className='flex justify-center items-center gap-2'>
                         <img src="/logo1.png" alt="Logo" className="w-8" />
-                        <p className="text-lg md:text-xl font-bold text-white hover:text-primary transition-all duration-300">Shoyaib Islam</p>
                     </div>
                     </Link>
-                        <p className="text-xs md:text-sm mt-1">Front-end Developer</p>
                     </div>
+                   <Link href={'#home'}>
+                    <div>
+                     <p className="text-lg md:text-xl font-bold text-white hover:text-primary transition-all duration-300">Shoyaib Islam</p>
+                     <p className="text-xs md:text-sm ">Front-end Developer</p>
+
+                    </div>
+                   </Link>
+                </div>
 
                     <div className="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-8 text-xs md:text-sm">
                         <Link href="#home" className="hover:text-primary transition-all duration-300">Home</Link>
