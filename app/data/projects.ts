@@ -1,6 +1,15 @@
-// app/data/projects.ts
+export type Project = {
+  slug: string;
+  name: string;
+  image: string;
+  description: string;
+  live: string;
+  github: string;
+  githubClient?: string; // ✅ optional
+  tech: string[];
+};
 
-export const projects = [
+export const projects: Project[] = [
   {
     slug: "cleanliness",
     name: "Cleanliness",
@@ -26,6 +35,7 @@ export const projects = [
       "Modern food ordering app with instant search, product browsing, and secure ordering.",
     live: "https://foodhub-one-neon.vercel.app/",
     github: "https://github.com/Shoybit/FoodHub",
+    githubClient: "https://github.com/Shoybit/FoodHub", // ✅ যদি client repo থাকে
     tech: [
       "Next.js",
       "React",

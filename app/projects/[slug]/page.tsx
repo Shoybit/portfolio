@@ -1,5 +1,3 @@
-// app/projects/[slug]/page.tsx
-
 import { projects } from "@/app/data/projects";
 import Image from "next/image";
 import Link from "next/link";
@@ -22,8 +20,8 @@ export default function ProjectDetails({ params }: Props) {
       <div className="min-h-screen flex flex-col items-center justify-center text-white bg-linear-to-b from-gray-900 to-background-dark px-4">
         <h1 className="text-4xl font-bold mb-4 text-primary">404</h1>
         <p className="text-gray-300 text-lg mb-8">Project not found</p>
-        <Link 
-          href="/#projects" 
+        <Link
+          href="/#projects"
           className="flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-lg transition-all hover:scale-105"
         >
           <FaArrowLeft />
@@ -38,8 +36,8 @@ export default function ProjectDetails({ params }: Props) {
       <div className="max-w-6xl mx-auto px-4 py-8 md:py-16 text-white">
         {/* Back Button */}
         <div className="mb-8 md:mb-12">
-          <Link 
-            href="/#projects" 
+          <Link
+            href="/#projects"
             className="inline-flex items-center gap-2 text-gray-400 hover:text-primary transition-colors group"
           >
             <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
@@ -48,17 +46,15 @@ export default function ProjectDetails({ params }: Props) {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
-          {/* Main Content - 2/3 width */}
+          {/* Main Content */}
           <div className="lg:col-span-2">
-            {/* Title */}
             <div className="mb-8">
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-                {project.name}<span className="text-primary">.</span>
-
+                {project.name}
+                <span className="text-primary">.</span>
               </h1>
             </div>
 
-            {/* Image */}
             <div className="relative rounded-2xl overflow-hidden mb-8 group">
               <div className="absolute inset-0 bg-linear-to-t from-gray-900/60 to-transparent z-10"></div>
               <Image
@@ -70,21 +66,23 @@ export default function ProjectDetails({ params }: Props) {
               />
             </div>
 
-            {/* Description */}
             <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-gray-700/50 mb-8">
-              <h2 className="text-2xl font-bold mb-4 text-primary">Project Overview</h2>
+              <h2 className="text-2xl font-bold mb-4 text-primary">
+                Project Overview
+              </h2>
               <p className="text-gray-300 leading-relaxed text-lg">
                 {project.description}
               </p>
             </div>
 
-            {/* Features */}
             <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-gray-700/50 mb-8">
-              <h2 className="text-2xl font-bold mb-6 text-primary">Key Features</h2>
+              <h2 className="text-2xl font-bold mb-6 text-primary">
+                Key Features
+              </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {project.tech.map((tech, index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className="flex items-center gap-3 p-3 bg-gray-900/50 rounded-lg border border-gray-700/50 hover:border-primary/30 transition-colors"
                   >
                     <div className="w-2 h-2 bg-primary rounded-full"></div>
@@ -95,10 +93,9 @@ export default function ProjectDetails({ params }: Props) {
             </div>
           </div>
 
-          {/* Sidebar - 1/3 width */}
+          {/* Sidebar */}
           <div className="lg:col-span-1">
             <div className="sticky top-8 space-y-6">
-              {/* Tech Stack Card */}
               <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50">
                 <h2 className="text-2xl font-bold mb-6 text-primary flex items-center gap-2">
                   <FaLink className="text-lg" />
@@ -116,11 +113,11 @@ export default function ProjectDetails({ params }: Props) {
                 </div>
               </div>
 
-              {/* Links Card */}
               <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50">
-                <h2 className="text-2xl font-bold mb-6 text-primary">Project Links</h2>
+                <h2 className="text-2xl font-bold mb-6 text-primary">
+                  Project Links
+                </h2>
                 <div className="space-y-4">
-                  {/* Live Project Button */}
                   <Link
                     href={project.live}
                     target="_blank"
@@ -131,14 +128,15 @@ export default function ProjectDetails({ params }: Props) {
                         <FaExternalLinkAlt className="text-primary text-lg" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-white">Live Project</h3>
+                        <h3 className="font-semibold text-white">
+                          Live Project
+                        </h3>
                         <p className="text-sm text-gray-400">View live demo</p>
                       </div>
                     </div>
                     <FaExternalLinkAlt className="text-gray-400 group-hover/live:text-primary transition-colors" />
                   </Link>
 
-                  {/* GitHub Button */}
                   <Link
                     href={project.github}
                     target="_blank"
@@ -149,43 +147,29 @@ export default function ProjectDetails({ params }: Props) {
                         <FaGithub className="text-gray-400 text-lg" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-white">GitHub Repository</h3>
-                        <p className="text-sm text-gray-400">View source code</p>
+                        <h3 className="font-semibold text-white">
+                          GitHub Repository
+                        </h3>
+                        <p className="text-sm text-gray-400">
+                          View source code
+                        </p>
                       </div>
                     </div>
                     <FaGithub className="text-gray-400 group-hover/github:text-white transition-colors" />
                   </Link>
 
-                  {/* Client Button if exists */}
-                  {project.githubClient && (
-                    <Link
-                      href={project.githubClient}
-                      target="_blank"
-                      className="group/client flex items-center justify-between p-4 bg-gray-900/50 rounded-xl border border-gray-700 hover:border-gray-500 transition-all hover:scale-[1.02]"
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className="p-2 bg-gray-800 rounded-lg">
-                          <FaGithub className="text-gray-400 text-lg" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-white">Client Code</h3>
-                          <p className="text-sm text-gray-400">Frontend repository</p>
-                        </div>
-                      </div>
-                      <FaGithub className="text-gray-400 group-hover/client:text-white transition-colors" />
-                    </Link>
-                  )}
                 </div>
               </div>
 
-              {/* Project Info */}
               <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50">
-                <h2 className="text-2xl font-bold mb-6 text-primary">Project Info</h2>
+                <h2 className="text-2xl font-bold mb-6 text-primary">
+                  Project Info
+                </h2>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center pb-3 border-b border-gray-700/50">
                     <span className="text-gray-400">Status</span>
                     <span className="inline-flex items-center gap-2 text-green-400">
-                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                      <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
                       Live
                     </span>
                   </div>
@@ -202,7 +186,6 @@ export default function ProjectDetails({ params }: Props) {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
