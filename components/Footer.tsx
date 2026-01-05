@@ -34,8 +34,9 @@ export default function Footer() {
                 </div>
 
                 <div className="border-t border-gray-800 mt-6 md:mt-8 pt-6 md:pt-8 text-center text-xs md:text-sm">
-                    <p>© 2024 Shoyaib Islam. All rights reserved.</p>
+                <p>© {new Date().getFullYear()} Shoyaib Islam. All rights reserved.</p>
                 </div>
+
             </div>
         </footer>
     );

@@ -3,11 +3,10 @@ import Link from 'next/link';
 import { FaExternalLinkAlt, FaGithub, FaEye } from 'react-icons/fa';
 
 export default function Projects() {
-  // Updated links array with the new projects
   const updatedProjects = [
     {
       name: "Cleanliness",
-      description: "Empowering communities to report, track, and contribute to a cleaner, safer environment. Fully-featured MERN stack application with responsive design, secure authentication, and contribution tracking.",
+      description: "Empowering communities to report, track, and contribute to a cleaner, safer environment....",
       tech: ["Node.js", "Router", "MongoDB", "React.js", "Express.js", "JavaScript", "Firebase Auth", "TailwindCSS"],
       live: "https://kaleidoscopic-alpaca-0f5158.netlify.app/",
       details: "/projects/cleanliness",
@@ -16,7 +15,7 @@ export default function Projects() {
     },
     {
       name: "FoodHub",
-      description: "FoodHub – Next.js Food Ordering Platform. Modern food ordering app with instant search, product browsing, and secure ordering, powered by Firebase Auth and MongoDB Atlas with a responsive UI.",
+      description: "Modern food ordering app with instant search, product browsing, and secure ordering....",
       tech: ["Next.js", "JavaScript", "React", "Firebase", "Express", "MongoDB Atlas", "Vercel", "TailwindCSS"],
       live: "https://foodhub-one-neon.vercel.app/",
       details: "/projects/foodhub",
@@ -25,7 +24,7 @@ export default function Projects() {
     },
     {
       name: "Green-Nest",
-      description: "GreenNest – Eco-Friendly Web App. A modern, responsive web application built with React, Tailwind CSS, and Firebase, designed to promote sustainable products and raise green lifestyle awareness.",
+      description: "Eco-friendly web application promoting sustainable products and green lifestyle awareness....",
       tech: ["React", "Tailwind", "Firebase", "DaisyUI", "ReactJS", "Toastify", "Spinner", "TailwindCSS"],
       live: "https://remarkable-torte-c4c438.netlify.app/",
       details: "/projects/green-nest",
@@ -81,7 +80,7 @@ export default function Projects() {
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-300 mb-5 text-sm leading-relaxed line-clamp-3">
+                <p className="text-gray-300 mb-5 text-[16px] leading-relaxed line-clamp-3">
                   {project.description}
                 </p>
 

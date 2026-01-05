@@ -5,7 +5,7 @@ export type Project = {
   description: string;
   live: string;
   github: string;
-  githubClient?: string; // ✅ optional
+  githubClient?: string; 
   tech: string[];
 };
 
@@ -15,7 +15,7 @@ export const projects: Project[] = [
     name: "Cleanliness",
     image: "/cleenkaleidoscopic-alpaca-0f5158-netlify-app-2025-12-05-23_03_48.jpg",
     description:
-      "Empowering communities to report, track, and contribute to a cleaner, safer environment.",
+      "Empowering communities to report, track, and contribute to a cleaner, safer environment. Fully-featured MERN stack application with responsive design, secure authentication, and contribution tracking..",
     live: "https://kaleidoscopic-alpaca-0f5158.netlify.app/",
     github: "https://github.com/Shoybit/Cleanliness--client",
     tech: [
@@ -32,10 +32,10 @@ export const projects: Project[] = [
     name: "FoodHub",
     image: "/Screenshot 2025-12-05 225958.png",
     description:
-      "Modern food ordering app with instant search, product browsing, and secure ordering.",
+      "FoodHub – Next.js Food Ordering Platform. Modern food ordering app with instant search, product browsing, and secure ordering, powered by Firebase Auth and MongoDB Atlas with a responsive UI.",
     live: "https://foodhub-one-neon.vercel.app/",
     github: "https://github.com/Shoybit/FoodHub",
-    githubClient: "https://github.com/Shoybit/FoodHub", // ✅ যদি client repo থাকে
+    githubClient: "https://github.com/Shoybit/FoodHub", 
     tech: [
       "Next.js",
       "React",
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     name: "Green-Nest",
     image: "/greennest.png",
     description:
-      "Eco-friendly web application promoting sustainable products and green lifestyle awareness.",
+      "GreenNest – Eco-Friendly Web App. A modern, responsive web application built with React, Tailwind CSS, and Firebase, designed to promote sustainable products and raise green lifestyle awareness.",
     live: "https://remarkable-torte-c4c438.netlify.app/",
     github: "https://github.com/Shoybit/Green-Nest",
     tech: [
