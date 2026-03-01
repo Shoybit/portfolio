@@ -59,5 +59,28 @@ export const projects: Project[] = [
       "DaisyUI",
       "Toastify",
     ],
+    
+  },
+   {
+    slug: "assetVerse",
+    name: "AssetVerse",
+    image: "/assetverse.png", 
+    description:
+      "AssetVerse is a modern Digital Asset Management (DAM) web application built with React and Vite. The platform allows users to manage, track, and organize digital or physical assets in a structured and user-friendly environment.",
+    live: "https://my-assetverse.vercel.app/",
+    github: "https://github.com/Shoybit/AssetVerse",
+    tech: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "DaisyUI",
+      "Axios",
+      "React Router",
+      "React Hook Form",
+      "Recharts",
+      "Framer Motion",
+      "SweetAlert2",
+      "React Toastify",
+    ],
   },
 ];
