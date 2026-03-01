@@ -64,7 +64,7 @@ export const projects: Project[] = [
    {
     slug: "assetVerse",
     name: "AssetVerse",
-    image: "/assetverse.png", 
+    image: "/AssetVerse.png", 
     description:
       "AssetVerse is a modern Digital Asset Management (DAM) web application built with React and Vite. The platform allows users to manage, track, and organize digital or physical assets in a structured and user-friendly environment.",
     live: "https://my-assetverse.vercel.app/",
