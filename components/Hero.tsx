@@ -80,7 +80,7 @@ export default function Hero() {
                                 <div className="absolute inset-0 bg-white/10 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
                             </Link>
                                 <Link
-                                href="https://drive.google.com/file/d/10BFnj3DASOlVrd0ifQLgT8cZTeiNNlWv/view"
+                                href="https://drive.google.com/file/d/1Hrp3oxCejdK1omgQOnE9mVF4eqXJA-BD/view?usp=sharing"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="border border-primary text-primary font-medium py-2 md:py-3 px-4 md:px-6 rounded hover:bg-primary hover-lift hover:text-white transition-all duration-300 flex items-center justify-center gap-2"
@@ -100,7 +100,7 @@ export default function Hero() {
                                 <img
                                     alt="Portrait of Shoyaib Islam, a front-end developer."
                                     className="rounded-full object-cover w-full h-full transform hover:scale-105 transition-transform duration-500"
-                                    src="/WhatsApp Image 2025-11-29 at 00.27.29_b32a6fed-depositphotos-bgremover.png"
+                                    src="/Hero Image.png"
                                 />
                                 <div className="absolute inset-0 bg-primary/0 hover:bg-primary/10 transition-all duration-500 rounded-full"></div>
                             </div>
