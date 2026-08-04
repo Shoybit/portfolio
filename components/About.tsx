@@ -212,7 +212,7 @@ export default function About() {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                <span className="relative z-10">Let's Connect</span>
+                                <span className="relative z-10">Let&apos;s Connect</span>
                                 <motion.span
                                     className="relative z-10"
                                     animate={{ x: [0, 5, 0] }}

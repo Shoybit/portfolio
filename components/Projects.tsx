@@ -58,16 +58,29 @@ export default function Projects() {
   return (
     <section id="projects" className="py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-gray-900 to-background-dark">
       <div className="container mx-auto">
-        {/* Header with improved styling */}
+ 
+
+            {/* Premium Header Section */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white dark:text-white mb-8 md:mb-12">
-            My Projects<span className="text-primary">.</span>
+          {/* Subtitle Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 backdrop-blur-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            <span className="text-xs font-medium text-primary tracking-wide uppercase">MY WORK</span>
+          </div>
+          
+          <h2 className="text-5xl sm:text-6xl font-bold tracking-tight mb-4">
+            <span className="text-white">My </span>
+            <span className="bg-gradient-to-r from-primary via-primary to-purple-600 bg-clip-text text-transparent">Projects</span>
           </h2>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
-            A selection of my favorite work. I&apos;m passionate about building clean, efficient, and user-friendly applications.
+          
+          {/* Gradient Underline */}
+          <div className="w-20 h-1 bg-gradient-to-r from-primary to-purple-500 mx-auto mt-4 rounded-full"></div>
+          
+          <p className="mt-4 max-w-2xl mx-auto text-slate-400 leading-relaxed">
+           A selection of my favorite work. I&apos;m passionate about building clean, efficient, and user-friendly applications.
           </p>
         </div>
-
+  
         {/* Alternating Projects Layout */}
         <div className="space-y-16 md:space-y-24">
           {updatedProjects.map((project, index) => (
