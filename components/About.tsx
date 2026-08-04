@@ -95,7 +95,11 @@ export default function About() {
                         animate={isInView ? { scaleX: 1 } : {}}
                         transition={{ delay: 0.3, duration: 0.8 }}
                     >
-                        <span className="text-primary text-sm font-medium tracking-[0.3em] uppercase">About Me</span>
+                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 backdrop-blur-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            <span className="text-xs font-medium text-primary tracking-wide uppercase">About Me</span>
+          </div>
+                        
                     </motion.div>
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-2">
                         Know Me<span className="text-primary">.</span>

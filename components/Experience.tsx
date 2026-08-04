@@ -169,6 +169,9 @@ export default function Experience() {
             <span className="bg-gradient-to-r from-primary via-primary to-purple-600 bg-clip-text text-transparent">Experience</span>
           </h2>
           
+          {/* Gradient Underline */}
+          <div className="w-20 h-1 bg-gradient-to-r from-primary to-purple-500 mx-auto mt-4 rounded-full"></div>
+          
           <p className="mt-4 max-w-2xl mx-auto text-slate-400 leading-relaxed">
             My professional journey working with modern web technologies and real-world development teams.
           </p>

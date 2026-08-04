@@ -5,7 +5,7 @@ import { motion, useInView, Variants } from "framer-motion";
 import { useRef } from "react";
 
 export default function Education() {
-    // useRef-এ HTMLElement টাইপ ডিক্লেয়ার করা হয়েছে
+   
     const ref = useRef<HTMLElement>(null);
     const isInView = useInView(ref, { once: true, amount: 0.2 });
 
@@ -25,7 +25,7 @@ export default function Education() {
         ]
     };
 
-    // Variants টাইপ যোগ করে টাইপস্ক্রিপ্ট এরর দূর করা হয়েছে
+    
     const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
@@ -88,7 +88,11 @@ export default function Education() {
                         animate={isInView ? { scaleX: 1 } : {}}
                         transition={{ delay: 0.3, duration: 0.8 }}
                     >
-                        <span className="text-primary text-sm font-medium tracking-[0.3em] uppercase">My Journey</span>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 backdrop-blur-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            <span className="text-xs font-medium text-primary tracking-wide uppercase">My Journey</span>
+          </div>
+                    
                     </motion.div>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-2">
                         Education<span className="text-primary">.</span>
