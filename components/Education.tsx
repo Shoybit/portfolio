@@ -1,48 +1,212 @@
+/* eslint-disable @next/next/no-img-element */
+"use client";
+
+import { motion, useInView, Variants } from "framer-motion";
+import { useRef } from "react";
+
 export default function Education() {
+    // useRef-এ HTMLElement টাইপ ডিক্লেয়ার করা হয়েছে
+    const ref = useRef<HTMLElement>(null);
+    const isInView = useInView(ref, { once: true, amount: 0.2 });
+
+    const educationData = {
+        degree: "Diploma in Engineering",
+        technology: "Computer Science & Technology",
+        institute: "Graphic Arts Institute, Dhaka",
+        year: "2023-2027",
+        status: "Currently Enrolled",
+        courses: [
+            { name: "Programming Fundamentals", color: "blue" },
+            { name: "Web Development", color: "green" },
+            { name: "Database Management", color: "purple" },
+            { name: "Software Engineering", color: "yellow" },
+            { name: "Data Structures", color: "pink" },
+            { name: "Network Security", color: "red" },
+        ]
+    };
+
+    // Variants টাইপ যোগ করে টাইপস্ক্রিপ্ট এরর দূর করা হয়েছে
+    const containerVariants: Variants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.2,
+            },
+        },
+    };
+
+    const itemVariants: Variants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.6,
+                ease: "easeOut",
+            },
+        },
+    };
+
+    const getColorClass = (color: string): string => {
+        const colors: Record<string, string> = {
+            blue: "bg-blue-500/20 text-blue-400 border-blue-500/30",
+            green: "bg-green-500/20 text-green-400 border-green-500/30",
+            purple: "bg-purple-500/20 text-purple-400 border-purple-500/30",
+            yellow: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
+            pink: "bg-pink-500/20 text-pink-400 border-pink-500/30",
+            red: "bg-red-500/20 text-red-400 border-red-500/30",
+        };
+        return colors[color] || colors.blue;
+    };
+
     return (
-        <section id="education" className="py-12 md:py-20 px-4 md:px-8 lg:px-16 bg-gray-900 dark:bg-gray-900">
-            <div className="container mx-auto max-w-4xl">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white dark:text-white mb-8 md:mb-12">
-                    Education<span className="text-primary">.</span>
-                </h2>
-
-                <div className="bg-gray-800  dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 hover-lift">
-                    <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-                        <div className="bg-primary/10 p-4 md:p-6 rounded-lg">
-                            <i className="fas fa-graduation-cap text-primary text-3xl md:text-4xl"></i>
-                        </div>
-
-                        <div className="flex-1">
-                            <h3 className="text-xl md:text-2xl font-bold text-white  dark:text-white mb-2">Diploma in Engineering</h3>
-                            <p className="text-base md:text-lg text-gray-300 dark:text-gray-300 mb-1">
-                                <span className="font-semibold">Technology Name:</span> Computer Science & Technology
-                            </p>
-                            <p className="text-gray-400 dark:text-gray-400 mb-1">
-                                <span className="font-semibold">Institute:</span> Graphic Arts Institute, Dhaka
-                            </p>
-                            <p className="text-gray-400 dark:text-gray-400">
-                                <span className="font-semibold">Year:</span> 2023-2027
-                            </p>
-
-                            <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-gray-700 dark:border-gray-700">
-                                <h4 className="font-semibold text-white dark:text-white mb-3">Key Courses & Skills Learned:</h4>
-                                <div className="flex flex-wrap gap-2">
-                                    <span className="px-2 py-1 md:px-3 md:py-1 bg-blue-900/30 dark:bg-blue-900/30 text-blue-400 dark:text-blue-400 rounded-full text-xs md:text-sm">Programming Fundamentals</span>
-                                    <span className="px-2 py-1 md:px-3 md:py-1 bg-green-900/30 dark:bg-green-900/30 text-green-400 dark:text-green-400 rounded-full text-xs md:text-sm">Web Development</span>
-                                    <span className="px-2 py-1 md:px-3 md:py-1 bg-purple-900/30 dark:bg-purple-900/30 text-purple-400 dark:text-purple-400 rounded-full text-xs md:text-sm">Database Management</span>
-                                    <span className="px-2 py-1 md:px-3 md:py-1 bg-yellow-900/30 dark:bg-yellow-900/30 text-yellow-400 dark:text-yellow-400 rounded-full text-xs md:text-sm">Software Engineering</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="text-center">
-                            <div className="inline-block px-3 py-1 md:px-4 md:py-2 bg-primary text-white rounded-full font-semibold text-sm md:text-base ">
-                                Currently Enrolled
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <section 
+            id="education" 
+            ref={ref}
+            className="relative py-16 md:py-24 bg-gradient-to-br from-[#0D1117] via-[#161B22] to-[#0D1117] overflow-hidden"
+        >
+            {/* Background Decorations */}
+            <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute -top-20 -right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+                <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/3 rounded-full blur-3xl"></div>
             </div>
+
+            <div className="container mx-auto px-4 relative z-10">
+                {/* Section Header */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-12 md:mb-16"
+                >
+                    <motion.div
+                        className="inline-block"
+                        initial={{ scaleX: 0 }}
+                        animate={isInView ? { scaleX: 1 } : {}}
+                        transition={{ delay: 0.3, duration: 0.8 }}
+                    >
+                        <span className="text-primary text-sm font-medium tracking-[0.3em] uppercase">My Journey</span>
+                    </motion.div>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-2">
+                        Education<span className="text-primary">.</span>
+                    </h2>
+                    <motion.div
+                        className="w-20 h-1 bg-gradient-to-r from-primary to-purple-500 mx-auto mt-4 rounded-full"
+                        initial={{ width: 0 }}
+                        animate={isInView ? { width: 80 } : {}}
+                        transition={{ delay: 0.5, duration: 0.8 }}
+                    />
+                    <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-sm md:text-base">
+                        My educational background and journey in technology
+                    </p>
+                </motion.div>
+
+                {/* Education Card */}
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                    className="max-w-4xl mx-auto"
+                >
+                    <motion.div 
+                        variants={itemVariants}
+                        className="relative group"
+                    >
+                        {/* Glow Effect */}
+                        <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-purple-500/20 to-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        {/* Main Card */}
+                        <div className="relative bg-[#161B22] rounded-2xl border border-gray-800/50 hover:border-primary/30 transition-all duration-500 overflow-hidden">
+                            {/* Card Header Gradient */}
+                            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-purple-500 to-primary"></div>
+                            
+                            <div className="p-6 md:p-8 lg:p-10">
+                                <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                                    {/* Icon */}
+                                    <motion.div 
+                                        variants={itemVariants}
+                                        className="relative"
+                                    >
+                                        <div className="absolute inset-0 bg-primary/20 rounded-xl blur-xl"></div>
+                                        <div className="relative bg-gradient-to-br from-primary/20 to-purple-500/20 p-4 md:p-5 rounded-xl border border-primary/20">
+                                            <i className="fas fa-graduation-cap text-primary text-3xl md:text-4xl"></i>
+                                        </div>
+                                    </motion.div>
+
+                                    {/* Content */}
+                                    <div className="flex-1">
+                                        <motion.div variants={itemVariants}>
+                                            <div className="flex flex-wrap items-center gap-3 mb-2">
+                                                <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white">
+                                                    {educationData.degree}
+                                                </h3>
+                                                <span className="px-3 py-1 bg-primary/20 text-primary text-xs font-medium rounded-full border border-primary/30">
+                                                    {educationData.status}
+                                                </span>
+                                            </div>
+                                            
+                                            <p className="text-base md:text-lg text-gray-300 mb-1">
+                                                <span className="font-semibold text-white">Technology:</span> {educationData.technology}
+                                            </p>
+                                            <p className="text-gray-400 mb-1">
+                                                <span className="font-semibold text-gray-300">Institute:</span> {educationData.institute}
+                                            </p>
+                                            <p className="text-gray-400">
+                                                <span className="font-semibold text-gray-300">Year:</span> {educationData.year}
+                                            </p>
+                                        </motion.div>
+
+                                        {/* Courses */}
+                                        <motion.div 
+                                            variants={itemVariants}
+                                            className="mt-6 pt-6 border-t border-gray-800"
+                                        >
+                                            <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
+                                                <span className="text-primary">📚</span> Key Courses & Skills
+                                            </h4>
+                                            <div className="flex flex-wrap gap-2">
+                                                {educationData.courses.map((course, index) => (
+                                                    <motion.span
+                                                        key={index}
+                                                        variants={itemVariants}
+                                                        className={`px-3 py-1.5 rounded-full text-xs md:text-sm font-medium border ${getColorClass(course.color)} transition-all duration-300 hover:scale-105 cursor-default`}
+                                                        whileHover={{ y: -2 }}
+                                                    >
+                                                        {course.name}
+                                                    </motion.span>
+                                                ))}
+                                            </div>
+                                        </motion.div>
+                                    </div>
+                                </div>
+
+                                {/* Timeline Indicator */}
+                                <motion.div 
+                                    variants={itemVariants}
+                                    className="absolute right-6 top-6 hidden md:block"
+                                >
+                                    <div className="flex flex-col items-center">
+                                        <div className="w-3 h-3 bg-primary rounded-full shadow-lg shadow-primary/50 animate-pulse"></div>
+                                        <div className="w-0.5 h-12 bg-gradient-to-b from-primary to-transparent mt-1"></div>
+                                        <div className="text-xs text-gray-500 mt-1">Current</div>
+                                    </div>
+                                </motion.div>
+                            </div>
+                        </div>
+                    </motion.div>
+                </motion.div>
+
+            </div>
+
+            <style jsx>{`
+                /* Smooth hover transitions */
+                .group:hover .shadow-primary\/20 {
+                    box-shadow: 0 0 40px rgba(244, 130, 103, 0.15);
+                }
+            `}</style>
         </section>
     );
 }
