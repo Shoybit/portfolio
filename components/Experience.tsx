@@ -67,9 +67,9 @@ const experiencesData: JobExperience[] = [
     role: "Frontend Developer",
     company: "Doict",
     logo: "D",
-    period: "Jan 2025 - Jun 2025",
+    period: "Sep 2025 - Feb 2026",
     duration: "6 Months",
-    timelinePeriod: "Jan 2025\n-\nJun 2025",
+    timelinePeriod: "Sep 2025\n-\nFeb 2026",
     isCurrent: false,
     description: "Worked as a Frontend Developer building responsive and modern web applications using React.js and Tailwind CSS. Collaborated with team members to improve UI/UX and optimize website performance.",
     responsibilities: [
@@ -87,10 +87,10 @@ const experiencesData: JobExperience[] = [
     role: "MERN Stack Developer",
     company: "Softvence",
     logo: "S",
-    period: "Jul 2025 - Present",
-    duration:"",
-    timelinePeriod: "Jul 2025\n-\nPresent",
-    isCurrent: true,
+    period: "Mar 2026 - July 2026",
+    duration:"4 Months",
+    timelinePeriod: "Mar 2026\n-\nJuly 2026",
+    isCurrent: false,
     description: "Currently working on scalable MERN stack applications, developing responsive user interfaces, integrating APIs, and improving application performance and user experience.",
     responsibilities: [
       "Building full-stack web applications using MERN stack",
@@ -106,15 +106,15 @@ const experiencesData: JobExperience[] = [
 
 // Premium Stat Card Component
 const StatCard: React.FC<StatCardProps> = ({ icon, value, label }) => (
-  <div className="group relative overflow-hidden bg-gradient-to-br from-[#0a0f1a] to-[#0c1322] border border-slate-800/50 rounded-2xl p-6 transition-all duration-500 hover:border-orange-500/30 hover:shadow-[0_0_30px_-10px_rgba(249,115,22,0.15)]">
+  <div className="group relative overflow-hidden bg-linear-to-br from-[#0a0f1a] to-[#0c1322] border border-slate-800/50 rounded-2xl p-6 transition-all duration-500 hover:border-orange-500/30 hover:shadow-[0_0_30px_-10px_rgba(249,115,22,0.15)]">
     {/* Animated gradient background */}
-    <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 via-orange-500/5 to-orange-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 translate-x-[-100%] group-hover:translate-x-[100%]" />
+    <div className="absolute inset-0 bg-linear-to-r from-orange-500/0 via-orange-500/5 to-orange-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 translate-x-[-100%] group-hover:translate-x-[100%]" />
     
     <div className="relative z-10 flex flex-col items-center text-center">
-      <div className="p-3 rounded-xl bg-gradient-to-br from-orange-500/10 to-orange-600/5 mb-4 group-hover:scale-110 transition-transform duration-300">
+      <div className="p-3 rounded-xl bg-linear-to-br from-orange-500/10 to-orange-600/5 mb-4 group-hover:scale-110 transition-transform duration-300">
         <div className="text-orange-500">{icon}</div>
       </div>
-      <span className="text-3xl font-bold bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent mb-1">{value}</span>
+      <span className="text-3xl font-bold bg-linear-to-r from-white to-slate-300 bg-clip-text text-transparent mb-1">{value}</span>
       <span className="text-xs text-slate-500 font-medium tracking-wide uppercase">{label}</span>
     </div>
   </div>
