@@ -62,8 +62,7 @@ const statsData: StatCardProps[] = [
 ];
 
 const experiencesData: JobExperience[] = [
-
-{
+  {
     id: "softvence",
     role: "Frontend Developer",
     company: "Softvence Agency", 
@@ -72,7 +71,7 @@ const experiencesData: JobExperience[] = [
     duration: "4 Months",
     timelinePeriod: "Mar 2026\n-\nJuly 2026",
     isCurrent: false,
-    description: "Built responsive, cross-browser interfaces and custom interactive features using modern frontend technologies like React and Next.js, while collaborating with teams to deliver scalable solutions.", // নতুন টেক্সট অনুযায়ী সামারি
+    description: "Built responsive, cross-browser interfaces and custom interactive features using modern frontend technologies like React and Next.js, while collaborating with teams to deliver scalable solutions.",
     responsibilities: [
       "Built responsive, cross-browser interfaces using JavaScript, React and Next.js with modern frontend best practices.",
       "Integrated REST APIs to power real-time, data-driven user experiences.",
@@ -82,7 +81,7 @@ const experiencesData: JobExperience[] = [
     ],
     technologies: ["JavaScript", "React", "Next.js", "REST APIs", "Wix Velo"] 
   },
-{
+  {
     id: "doict",
     role: "MERN Stack Developer",
     company: "Doict",
@@ -106,15 +105,15 @@ const experiencesData: JobExperience[] = [
 
 // Premium Stat Card Component
 const StatCard: React.FC<StatCardProps> = ({ icon, value, label }) => (
-  <div className="group relative overflow-hidden bg-linear-to-br from-[#0a0f1a] to-[#0c1322] border border-slate-800/50 rounded-2xl p-6 transition-all duration-500 hover:border-orange-500/30 hover:shadow-[0_0_30px_-10px_rgba(249,115,22,0.15)]">
+  <div className="group relative overflow-hidden bg-gradient-to-br from-[#0a0f1a] to-[#0c1322] border border-slate-800/50 rounded-2xl p-6 transition-all duration-500 hover:border-primary/30 hover:shadow-[0_0_30px_-10px_rgba(249,115,22,0.15)]">
     {/* Animated gradient background */}
-    <div className="absolute inset-0 bg-linear-to-r from-orange-500/0 via-orange-500/5 to-orange-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 translate-x-[-100%] group-hover:translate-x-[100%]" />
+    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 translate-x-[-100%] group-hover:translate-x-[100%]" />
     
     <div className="relative z-10 flex flex-col items-center text-center">
-      <div className="p-3 rounded-xl bg-linear-to-br from-orange-500/10 to-orange-600/5 mb-4 group-hover:scale-110 transition-transform duration-300">
-        <div className="text-orange-500">{icon}</div>
+      <div className="p-3 rounded-xl bg-gradient-to-br from-primary/10 to-purple-600/5 mb-4 group-hover:scale-110 transition-transform duration-300">
+        <div className="text-primary">{icon}</div>
       </div>
-      <span className="text-3xl font-bold bg-linear-to-r from-white to-slate-300 bg-clip-text text-transparent mb-1">{value}</span>
+      <span className="text-3xl font-bold bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent mb-1">{value}</span>
       <span className="text-xs text-slate-500 font-medium tracking-wide uppercase">{label}</span>
     </div>
   </div>
@@ -143,15 +142,16 @@ const TechBadge: React.FC<{ tech: string }> = ({ tech }) => {
   );
 };
 
-export const Experience: React.FC = () => {
+// Main Experience Component - Default Export
+export default function Experience() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#03050b] via-[#050a14] to-[#030712] text-slate-300 py-20 px-4 sm:px-6 lg:px-8 font-sans relative overflow-hidden">
       
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/5 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange-500/3 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/3 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-5xl mx-auto relative z-10">
@@ -159,14 +159,14 @@ export const Experience: React.FC = () => {
         {/* Premium Header Section */}
         <div className="text-center mb-16">
           {/* Subtitle Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6 backdrop-blur-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
-            <span className="text-xs font-medium text-orange-400 tracking-wide uppercase">Professional Journey</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 backdrop-blur-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            <span className="text-xs font-medium text-primary tracking-wide uppercase">Professional Journey</span>
           </div>
           
           <h2 className="text-5xl sm:text-6xl font-bold tracking-tight mb-4">
             <span className="text-white">My </span>
-            <span className="bg-gradient-to-r from-orange-500 via-orange-400 to-orange-600 bg-clip-text text-transparent">Experience</span>
+            <span className="bg-gradient-to-r from-primary via-primary to-purple-600 bg-clip-text text-transparent">Experience</span>
           </h2>
           
           <p className="mt-4 max-w-2xl mx-auto text-slate-400 leading-relaxed">
@@ -185,7 +185,7 @@ export const Experience: React.FC = () => {
         <div className="relative pl-0 md:pl-32">
           
           {/* Gradient Vertical Timeline Line */}
-          <div className="hidden md:block absolute left-24 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-orange-500/40 to-transparent" />
+          <div className="hidden md:block absolute left-24 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-primary/40 to-transparent" />
 
           {/* Cards Stack */}
           <div className="space-y-12">
@@ -198,10 +198,10 @@ export const Experience: React.FC = () => {
                 
                 {/* Desktop Left Timeline Indicators */}
                 <div className="hidden md:flex absolute -left-32 top-6 w-24 flex-col items-end text-right pr-4">
-                  <span className="text-sm font-bold bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent whitespace-pre-line leading-tight">
+                  <span className="text-sm font-bold bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent whitespace-pre-line leading-tight">
                     {job.timelinePeriod}
                   </span>
-                  <span className="mt-2 inline-block text-[10px] px-2 py-1 bg-orange-500/10 border border-orange-500/20 text-orange-400 rounded-md font-medium backdrop-blur-sm">
+                  <span className="mt-2 inline-block text-[10px] px-2 py-1 bg-primary/10 border border-primary/20 text-primary rounded-md font-medium backdrop-blur-sm">
                     {job.duration}
                   </span>
                 </div>
@@ -209,40 +209,40 @@ export const Experience: React.FC = () => {
                 {/* Premium Timeline Node */}
                 <div className="hidden md:block absolute left-[92px] top-7">
                   <div className="relative">
-                    <div className="w-4 h-4 rounded-full bg-orange-500 border-2 border-[#030712] ring-4 ring-orange-500/20 z-10" />
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-orange-500/20 animate-ping" />
+                    <div className="w-4 h-4 rounded-full bg-primary border-2 border-[#030712] ring-4 ring-primary/20 z-10" />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-primary/20 animate-ping" />
                   </div>
                 </div>
 
                 {/* Mobile/Tablet Inline Date Badges */}
                 <div className="flex md:hidden items-center gap-2 mb-2">
-                  <span className="text-xs font-bold text-orange-500">{job.period}</span>
-                  <span className="text-[10px] px-2 py-0.5 bg-orange-500/10 border border-orange-500/20 text-orange-400 rounded-md">
+                  <span className="text-xs font-bold text-primary">{job.period}</span>
+                  <span className="text-[10px] px-2 py-0.5 bg-primary/10 border border-primary/20 text-primary rounded-md">
                     {job.duration}
                   </span>
                 </div>
 
                 {/* Premium Main Card */}
                 <div className="flex-1 group">
-                  <div className="relative bg-gradient-to-br from-[#0a0f1a] to-[#0c1322] border border-slate-800/50 rounded-2xl p-6 md:p-8 transition-all duration-500 hover:border-orange-500/30 hover:shadow-[0_0_40px_-15px_rgba(249,115,22,0.2)] overflow-hidden">
+                  <div className="relative bg-gradient-to-br from-[#0a0f1a] to-[#0c1322] border border-slate-800/50 rounded-2xl p-6 md:p-8 transition-all duration-500 hover:border-primary/30 hover:shadow-[0_0_40px_-15px_rgba(249,115,22,0.2)] overflow-hidden">
                     
                     {/* Card Gradient Hover Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 via-orange-500/5 to-orange-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 translate-x-[-100%] group-hover:translate-x-[100%]" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 translate-x-[-100%] group-hover:translate-x-[100%]" />
                     
                     {/* Card Header */}
                     <div className="flex items-start justify-between flex-wrap gap-4 mb-6 relative z-10">
                       <div className="flex items-center gap-4">
                         {/* Premium Logo Container */}
                         <div className="relative">
-                          <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl blur-md opacity-50 group-hover:opacity-75 transition-opacity" />
-                          <div className="relative w-14 h-14 bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl flex items-center justify-center text-2xl font-bold text-orange-500 border border-slate-700 shadow-lg">
+                          <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 rounded-xl blur-md opacity-50 group-hover:opacity-75 transition-opacity" />
+                          <div className="relative w-14 h-14 bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl flex items-center justify-center text-2xl font-bold text-primary border border-slate-700 shadow-lg">
                             {job.logo}
                           </div>
                         </div>
                         
                         <div>
                           <h3 className="text-xl font-bold text-white tracking-tight">{job.role}</h3>
-                          <p className="text-sm font-semibold text-orange-500 mt-0.5">{job.company}</p>
+                          <p className="text-sm font-semibold text-primary mt-0.5">{job.company}</p>
                           
                           {/* Period Details */}
                           <div className="flex items-center gap-2 text-xs text-slate-500 mt-2">
@@ -274,8 +274,8 @@ export const Experience: React.FC = () => {
                     {/* Key Responsibilities */}
                     <div className="mb-6 relative z-10">
                       <div className="flex items-center gap-2 mb-4">
-                        <div className="p-1.5 rounded-lg bg-orange-500/10">
-                          <svg className="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="p-1.5 rounded-lg bg-primary/10">
+                          <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                           </svg>
                         </div>
@@ -285,7 +285,7 @@ export const Experience: React.FC = () => {
                       <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
                         {job.responsibilities.map((resp, i) => (
                           <li key={i} className="flex items-start text-xs text-slate-400 leading-relaxed group/li">
-                            <span className="text-orange-500 mr-2 select-none mt-0.5">▹</span>
+                            <span className="text-primary mr-2 select-none mt-0.5">▹</span>
                             <span className="group-hover/li:text-slate-300 transition-colors">{resp}</span>
                           </li>
                         ))}
@@ -295,8 +295,8 @@ export const Experience: React.FC = () => {
                     {/* Technologies Used */}
                     <div className="relative z-10">
                       <div className="flex items-center gap-2 mb-4">
-                        <div className="p-1.5 rounded-lg bg-orange-500/10">
-                          <svg className="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="p-1.5 rounded-lg bg-primary/10">
+                          <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                           </svg>
                         </div>
@@ -340,4 +340,4 @@ export const Experience: React.FC = () => {
       `}</style>
     </div>
   );
-};
+}
