@@ -38,8 +38,8 @@ const statsData: StatCardProps[] = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
       </svg>
     ),
-    value: "8+",
-    label: "Months Experience",
+    value: "1+",
+    label: "Years Experience",
   },
   {
     icon: (
@@ -47,7 +47,7 @@ const statsData: StatCardProps[] = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
       </svg>
     ),
-    value: "2+",
+    value: "40+",
     label: "Projects Completed",
   },
   {
@@ -62,46 +62,46 @@ const statsData: StatCardProps[] = [
 ];
 
 const experiencesData: JobExperience[] = [
-  {
-    id: "doict",
+
+{
+    id: "softvence",
     role: "Frontend Developer",
+    company: "Softvence Agency", 
+    logo: "S",
+    period: "Mar 2026 - July 2026",
+    duration: "4 Months",
+    timelinePeriod: "Mar 2026\n-\nJuly 2026",
+    isCurrent: false,
+    description: "Built responsive, cross-browser interfaces and custom interactive features using modern frontend technologies like React and Next.js, while collaborating with teams to deliver scalable solutions.", // নতুন টেক্সট অনুযায়ী সামারি
+    responsibilities: [
+      "Built responsive, cross-browser interfaces using JavaScript, React and Next.js with modern frontend best practices.",
+      "Integrated REST APIs to power real-time, data-driven user experiences.",
+      "Designed reusable, modular UI components, improving consistency and cutting development time.",
+      "Collaborated with designers and developers to deliver scalable, production-ready frontend solutions.",
+      "Developed custom interactive features using Wix Velo (Velo Code), extending functionality beyond standard templates."
+    ],
+    technologies: ["JavaScript", "React", "Next.js", "REST APIs", "Wix Velo"] 
+  },
+{
+    id: "doict",
+    role: "MERN Stack Developer",
     company: "Doict",
     logo: "D",
     period: "Sep 2025 - Feb 2026",
     duration: "6 Months",
     timelinePeriod: "Sep 2025\n-\nFeb 2026",
     isCurrent: false,
-    description: "Worked as a Frontend Developer building responsive and modern web applications using React.js and Tailwind CSS. Collaborated with team members to improve UI/UX and optimize website performance.",
+    description: "Worked as a MERN Stack Developer to build and maintain full-stack web applications. Developed scalable REST APIs using Node.js and Express, designed MongoDB databases, and created responsive frontend interfaces using React.js and Tailwind CSS.",
     responsibilities: [
-      "Developed responsive user interfaces using React.js and Tailwind CSS",
-      "Collaborated with backend developers and designers",
-      "Integrated RESTful APIs and third-party services",
-      "Optimized application performance and improved user experience",
-      "Implemented responsive layouts for web applications",
-      "Maintained code quality and followed best practices",
+      "Built and maintained full-stack web applications using MongoDB, Express.js, React.js, and Node.js.",
+      "Developed responsive and interactive user interfaces using React.js and Tailwind CSS.",
+      "Designed and implemented RESTful APIs to manage smooth data flow between frontend and backend.",
+      "Managed database schemas and optimized database queries using MongoDB.",
+      "Optimized overall application performance and improved user experience.",
+      "Collaborated with the team to maintain code quality and follow best practices."
     ],
-    technologies: ["React", "Tailwind CSS", "JavaScript", "Firebase", "REST API"],
-  },
-  {
-    id: "softvence",
-    role: "MERN Stack Developer",
-    company: "Softvence",
-    logo: "S",
-    period: "Mar 2026 - July 2026",
-    duration:"4 Months",
-    timelinePeriod: "Mar 2026\n-\nJuly 2026",
-    isCurrent: false,
-    description: "Currently working on scalable MERN stack applications, developing responsive user interfaces, integrating APIs, and improving application performance and user experience.",
-    responsibilities: [
-      "Building full-stack web applications using MERN stack",
-      "Working with MongoDB for database design",
-      "Developing and consuming REST APIs",
-      "Improving application performance and scalability",
-      "Designing and implementing responsive UI",
-      "Collaborating with the team and following agile methodology",
-    ],
-    technologies: ["MongoDB", "Express.js", "React", "Node.js", "Next.js"],
-  },
+    technologies: ["MongoDB", "Express.js", "React", "Node.js", "Tailwind CSS", "REST API"]
+  }
 ];
 
 // Premium Stat Card Component
