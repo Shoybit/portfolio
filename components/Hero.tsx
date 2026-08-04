@@ -198,40 +198,44 @@ const floatingIcons = [
                             variants={itemVariants}
                             className="flex flex-col sm:flex-row gap-3 md:gap-4 mt-4 justify-center lg:justify-start"
                         >
-                            <motion.div
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                <Link
-                                    href="#projects"
-                                    className="group relative bg-gradient-to-r from-primary to-purple-600 text-white font-medium py-3 px-6 rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 text-center inline-flex items-center justify-center gap-2 overflow-hidden"
-                                >
-                                    <span className="relative z-10">View Projects</span>
-                                    <motion.span
-                                        className="relative z-10"
-                                        animate={{ x: [0, 5, 0] }}
-                                        transition={{ repeat: Infinity, duration: 1.5 }}
-                                    >
-                                        →
-                                    </motion.span>
-                                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                </Link>
-                            </motion.div>
+                            {/* View Projects Button */}
+<motion.div
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className="w-full sm:w-auto"
+>
+    <Link
+        href="#projects"
+        className="group relative w-full sm:w-auto bg-gradient-to-r from-primary to-purple-600 text-white font-medium py-2.5 px-4 sm:px-6 text-sm sm:text-base rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 text-center inline-flex items-center justify-center gap-2 overflow-hidden"
+    >
+        <span className="relative z-10">View Projects</span>
+        <motion.span
+            className="relative z-10"
+            animate={{ x: [0, 5, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5 }}
+        >
+            →
+        </motion.span>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    </Link>
+</motion.div>
 
-                            <motion.div
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                <Link
-                                    href="https://drive.google.com/file/d/1Hrp3oxCejdK1omgQOnE9mVF4eqXJA-BD/view?usp=sharing"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="group border border-primary/50 text-primary font-medium py-3 px-6 rounded-lg hover:bg-primary/10 hover:border-primary transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm"
-                                >
-                                    <i className="fas fa-download"></i>
-                                    Resume
-                                </Link>
-                            </motion.div>
+{/* Resume Button */}
+<motion.div
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className="w-full sm:w-auto"
+>
+    <Link
+        href="https://drive.google.com/file/d/1Hrp3oxCejdK1omgQOnE9mVF4eqXJA-BD/view?usp=sharing"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group w-full sm:w-auto border border-primary/50 text-primary font-medium py-2.5 px-4 sm:px-6 text-sm sm:text-base rounded-lg hover:bg-primary/10 hover:border-primary transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm"
+    >
+        <i className="fas fa-download"></i>
+        Resume
+    </Link>
+</motion.div>
                         </motion.div>
 
 {/* Social Links */}
@@ -354,7 +358,7 @@ const floatingIcons = [
 
             {/* Scroll Indicator */}
             <motion.div
-                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+                className=" hidden md:flex absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
                 animate={{
                     y: [0, 10, 0],
                 }}
