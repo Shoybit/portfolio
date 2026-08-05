@@ -1,8 +1,15 @@
+"use client";
+
 /* eslint-disable @next/next/no-img-element */
+import { useRef } from 'react';
 import Link from 'next/link';
+import { motion, useInView } from 'framer-motion';
 import { FaExternalLinkAlt, FaGithub, FaEye } from 'react-icons/fa';
 
 export default function Projects() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.1 });
+
   const updatedProjects = [
     {
       name: "Cleanliness",
@@ -35,51 +42,59 @@ export default function Projects() {
       name: "AssetVerse",
       description: "AssetVerse is a modern Digital Asset Management (DAM) web application built with the MERN ecosystem (Frontend: React + Vite). The platform is designed to efficiently manage, track, and organize digital or physical assets in a structured and user-friendly environment.",
       tech: [
-  "React",
-  "Vite",
-  "Tailwind CSS",
-  "DaisyUI",
-  "Axios",
-  "React Router",
-  "React Hook Form",
-  "Recharts",
-  "Framer Motion",
-  "SweetAlert2",
-  "React Toastify"
-],
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "DaisyUI",
+        "Axios",
+        "React Router",
+        "React Hook Form",
+        "Recharts",
+        "Framer Motion",
+        "SweetAlert2",
+        "React Toastify"
+      ],
       live: "https://my-assetverse.vercel.app/",
       details: "/projects/assetVerse",
       github: "https://github.com/Shoybit/AssetVerse",
       image: "/AssetVerse.png"
     },
-
   ];
 
   return (
-    <section id="projects" className="py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-gray-900 to-background-dark">
-      <div className="container mx-auto">
- 
+    <section id="projects" className="py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-linear-to-b from-gray-900 to-background-dark">
+      <div ref={containerRef} className="container mx-auto">
 
-            {/* Premium Header Section */}
-        <div className="text-center mb-16">
+        {/* Animated Premium Header Section */}
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6 }}
+        >
           {/* Subtitle Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 backdrop-blur-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             <span className="text-xs font-medium text-primary tracking-wide uppercase">MY WORK</span>
           </div>
           
-          <h2 className="text-5xl sm:text-6xl font-bold tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
             <span className="text-white">My </span>
-            <span className="bg-gradient-to-r from-primary via-primary to-purple-600 bg-clip-text text-transparent">Projects</span>
+            <span className="bg-linear-to-r from-primary via-purple-500 to-purple-600 bg-clip-text text-transparent">Projects</span>
           </h2>
           
-          {/* Gradient Underline */}
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-purple-500 mx-auto mt-4 rounded-full"></div>
+          {/* Animated Gradient Underline */}
+          <motion.div
+            className="h-1 bg-linear-to-r from-primary to-purple-500 mx-auto mt-4 rounded-full"
+            initial={{ width: 0 }}
+            animate={isInView ? { width: 80 } : { width: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+          />
           
-          <p className="mt-4 max-w-2xl mx-auto text-slate-400 leading-relaxed">
-           A selection of my favorite work. I&apos;m passionate about building clean, efficient, and user-friendly applications.
+          <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-base text-slate-400 leading-relaxed px-4">
+            A selection of my favorite work. I&apos;m passionate about building clean, efficient, and user-friendly applications.
           </p>
-        </div>
+        </motion.div>
   
         {/* Alternating Projects Layout */}
         <div className="space-y-16 md:space-y-24">
@@ -100,7 +115,8 @@ export default function Projects() {
                   shadow-xl hover:shadow-2xl transition-all duration-500
                   border border-gray-700/50 group-hover:border-primary/30
                 ">
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-70 z-10"></div>
+                  <div className="absolute inset-0 bg-gradien.
+                  t-to-t from-gray-900 via-transparent to-transparent opacity-70 z-10"></div>
                   <img
                     src={project.image}
                     alt={project.name}
@@ -130,12 +146,12 @@ export default function Projects() {
 
                 {/* Description Card */}
                 <div className="
-                  bg-gradient-to-br from-gray-800/80 to-gray-900/90 
+                  bg-linear-to-br from-gray-800/80 to-gray-900/90 
                   rounded-xl p-6 mb-6
                   border border-gray-700/50
                   backdrop-blur-sm
                 ">
-                  <p className="text-gray-300 text-lg leading-relaxed">
+                  <p className="text-gray-300 text-sm md:text-base leading-relaxed">
                     {project.description}
                   </p>
                 </div>
@@ -148,8 +164,8 @@ export default function Projects() {
                       <span
                         key={i}
                         className="
-                          text-sm bg-gray-800/80 text-gray-300 
-                          px-4 py-2 rounded-full 
+                          text-xs md:text-sm bg-gray-800/80 text-gray-300 
+                          px-3 py-1.5 md:px-4 md:py-2 rounded-full 
                           border border-gray-700 
                           hover:border-primary/50 hover:text-primary 
                           transition-all duration-300
@@ -171,9 +187,9 @@ export default function Projects() {
                     className="
                       group/btn
                       flex items-center gap-2
-                      px-6 py-3
+                      px-5 py-2.5 md:px-6 md:py-3
                       bg-primary hover:bg-primary-dark
-                      text-white font-medium
+                      text-white font-medium text-sm md:text-base
                       rounded-lg
                       transition-all duration-300
                       hover:shadow-lg hover:shadow-primary/30
@@ -189,9 +205,9 @@ export default function Projects() {
                     className="
                       group/btn
                       flex items-center gap-2
-                      px-6 py-3
+                      px-5 py-2.5 md:px-6 md:py-3
                       bg-gray-800 hover:bg-gray-700
-                      text-white font-medium
+                      text-white font-medium text-sm md:text-base
                       rounded-lg
                       transition-all duration-300
                       border border-gray-700 hover:border-primary/50
@@ -209,10 +225,10 @@ export default function Projects() {
                     className="
                       group/btn
                       flex items-center gap-2
-                      px-6 py-3
+                      px-5 py-2.5 md:px-6 md:py-3
                       bg-gray-800/50 hover:bg-gray-800
                       text-gray-400 hover:text-white
-                      font-medium
+                      font-medium text-sm md:text-base
                       rounded-lg
                       transition-all duration-300
                       border border-gray-700 hover:border-primary/50
