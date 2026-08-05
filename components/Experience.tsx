@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 // --- Types ---
 interface StatCardProps {
@@ -105,15 +106,14 @@ const experiencesData: JobExperience[] = [
 
 // Premium Stat Card Component
 const StatCard: React.FC<StatCardProps> = ({ icon, value, label }) => (
-  <div className="group relative overflow-hidden bg-gradient-to-br from-[#0a0f1a] to-[#0c1322] border border-slate-800/50 rounded-2xl p-6 transition-all duration-500 hover:border-primary/30 hover:shadow-[0_0_30px_-10px_rgba(249,115,22,0.15)]">
-    {/* Animated gradient background */}
-    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 translate-x-[-100%] group-hover:translate-x-[100%]" />
+  <div className="group relative overflow-hidden bg-linear-to-br from-[#0a0f1a] to-[#0c1322] border border-slate-800/50 rounded-2xl p-6 transition-all duration-500 hover:border-primary/30 hover:shadow-[0_0_30px_-10px_rgba(249,115,22,0.15)]">
+    <div className="absolute inset-0 bg-linear-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 -translate-x-full group-hover:translate-x-full" />
     
     <div className="relative z-10 flex flex-col items-center text-center">
-      <div className="p-3 rounded-xl bg-gradient-to-br from-primary/10 to-purple-600/5 mb-4 group-hover:scale-110 transition-transform duration-300">
+      <div className="p-3 rounded-xl bg-linear-to-br from-primary/10 to-purple-600/5 mb-4 group-hover:scale-110 transition-transform duration-300">
         <div className="text-primary">{icon}</div>
       </div>
-      <span className="text-3xl font-bold bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent mb-1">{value}</span>
+      <span className="text-3xl font-bold bg-linear-to-r from-white to-slate-300 bg-clip-text text-transparent mb-1">{value}</span>
       <span className="text-xs text-slate-500 font-medium tracking-wide uppercase">{label}</span>
     </div>
   </div>
@@ -136,7 +136,7 @@ const TechBadge: React.FC<{ tech: string }> = ({ tech }) => {
   const colors = techColors[tech] || "from-blue-500/20 to-indigo-500/10 border-blue-500/30 text-blue-400";
 
   return (
-    <span className={`px-3 py-1.5 rounded-lg text-xs font-medium bg-gradient-to-r ${colors} border backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-lg inline-block`}>
+    <span className={`px-3 py-1.5 rounded-lg text-xs font-medium bg-linear-to-r ${colors} border backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-lg inline-block`}>
       {tech}
     </span>
   );
@@ -144,8 +144,11 @@ const TechBadge: React.FC<{ tech: string }> = ({ tech }) => {
 
 // Main Experience Component - Default Export
 export default function Experience() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.2 });
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#03050b] via-[#050a14] to-[#030712] text-slate-300 py-20 px-4 sm:px-6 lg:px-8 font-sans relative overflow-hidden">
+    <div ref={containerRef} className="min-h-screen bg-linear-to-br from-[#03050b] via-[#050a14] to-[#030712] text-slate-300 py-20 px-4 sm:px-6 lg:px-8 font-sans relative overflow-hidden">
       
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -157,25 +160,39 @@ export default function Experience() {
       <div className="max-w-5xl mx-auto relative z-10">
         
         {/* Premium Header Section */}
-        <div className="text-center mb-16">
-          {/* Subtitle Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 backdrop-blur-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            <span className="text-xs font-medium text-primary tracking-wide uppercase">Professional Journey</span>
-          </div>
-          
-          <h2 className="text-5xl sm:text-6xl font-bold tracking-tight mb-4">
-            <span className="text-white">My </span>
-            <span className="bg-linear-to-r from-primary via-primary to-purple-600 bg-clip-text text-transparent">Experience</span>
-          </h2>
-          
-          {/* Gradient Underline */}
-          <div className="w-20 h-1 bg-linear-to-r from-primary to-purple-500 mx-auto mt-4 rounded-full"></div>
-          
-          <p className="mt-4 max-w-2xl mx-auto text-slate-400 leading-relaxed">
-            My professional journey working with modern web technologies and real-world development teams.
-          </p>
-        </div>
+        <motion.div 
+            className="text-center mb-12 sm:mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6 }}
+        >
+            {/* Subtitle Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 backdrop-blur-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                <span className="text-xs font-medium text-primary tracking-wide uppercase">
+                    Experience & Career
+                </span>
+            </div>
+
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
+                <span className="text-white">Work </span>
+                <span className="bg-linear-to-r from-primary via-purple-500 to-purple-600 bg-clip-text text-transparent">
+                    Experience
+                </span>
+            </h2>
+
+            {/* Animated Gradient Underline */}
+            <motion.div
+                className="h-1 bg-linear-to-r from-primary to-purple-500 mx-auto mt-4 rounded-full"
+                initial={{ width: 0 }}
+                animate={isInView ? { width: 80 } : { width: 0 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
+            />
+
+            <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-base text-slate-400 leading-relaxed px-4">
+                My professional journey and key achievements in web development.
+            </p>
+        </motion.div>
 
         {/* Premium Stats Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-20">
@@ -201,7 +218,7 @@ export default function Experience() {
                 
                 {/* Desktop Left Timeline Indicators */}
                 <div className="hidden md:flex absolute -left-32 top-6 w-24 flex-col items-end text-right pr-4">
-                  <span className="text-sm font-bold bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent whitespace-pre-line leading-tight">
+                  <span className="text-sm font-bold bg-linear-to-r from-primary to-primary bg-clip-text text-transparent whitespace-pre-line leading-tight">
                     {job.timelinePeriod}
                   </span>
                   <span className="mt-2 inline-block text-[10px] px-2 py-1 bg-primary/10 border border-primary/20 text-primary rounded-md font-medium backdrop-blur-sm">
@@ -227,18 +244,16 @@ export default function Experience() {
 
                 {/* Premium Main Card */}
                 <div className="flex-1 group">
-                  <div className="relative bg-gradient-to-br from-[#0a0f1a] to-[#0c1322] border border-slate-800/50 rounded-2xl p-6 md:p-8 transition-all duration-500 hover:border-primary/30 hover:shadow-[0_0_40px_-15px_rgba(249,115,22,0.2)] overflow-hidden">
+                  <div className="relative bg-linear-to-br from-[#0a0f1a] to-[#0c1322] border border-slate-800/50 rounded-2xl p-6 md:p-8 transition-all duration-500 hover:border-primary/30 hover:shadow-[0_0_40px_-15px_rgba(249,115,22,0.2)] overflow-hidden">
                     
-                    {/* Card Gradient Hover Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 translate-x-[-100%] group-hover:translate-x-[100%]" />
+                    <div className="absolute inset-0 bg-linear-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 -translate-x-full group-hover:translate-x-full" />
                     
                     {/* Card Header */}
                     <div className="flex items-start justify-between flex-wrap gap-4 mb-6 relative z-10">
                       <div className="flex items-center gap-4">
-                        {/* Premium Logo Container */}
                         <div className="relative">
-                          <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 rounded-xl blur-md opacity-50 group-hover:opacity-75 transition-opacity" />
-                          <div className="relative w-14 h-14 bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl flex items-center justify-center text-2xl font-bold text-primary border border-slate-700 shadow-lg">
+                          <div className="absolute inset-0 bg-linear-to-r from-primary to-purple-600 rounded-xl blur-md opacity-50 group-hover:opacity-75 transition-opacity" />
+                          <div className="relative w-14 h-14 bg-linear-to-br from-slate-900 to-slate-800 rounded-xl flex items-center justify-center text-2xl font-bold text-primary border border-slate-700 shadow-lg">
                             {job.logo}
                           </div>
                         </div>
@@ -247,7 +262,6 @@ export default function Experience() {
                           <h3 className="text-xl font-bold text-white tracking-tight">{job.role}</h3>
                           <p className="text-sm font-semibold text-primary mt-0.5">{job.company}</p>
                           
-                          {/* Period Details */}
                           <div className="flex items-center gap-2 text-xs text-slate-500 mt-2">
                             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -257,7 +271,6 @@ export default function Experience() {
                         </div>
                       </div>
 
-                      {/* Premium Status Badge */}
                       <span className={`text-[10px] tracking-wider font-semibold px-3 py-1.5 rounded-full backdrop-blur-sm ${
                         job.isCurrent 
                           ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30' 
@@ -324,8 +337,7 @@ export default function Experience() {
 
       </div>
 
-      {/* Add animation keyframes */}
-      <style>{`
+      <style jsx>{`
         @keyframes fade-in-up {
           from {
             opacity: 0;
