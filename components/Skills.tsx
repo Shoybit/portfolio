@@ -43,37 +43,41 @@ export default function Skills() {
 
             <div className="container mx-auto px-4 relative z-10">
                 {/* Section Header */}
-                <motion.div
+                <motion.div 
+                    className="text-center mb-12 sm:mb-16"
                     initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-12 md:mb-16"
                 >
-                    <motion.div
-                        className="inline-block"
-                        initial={{ scaleX: 0 }}
-                        animate={isInView ? { scaleX: 1 } : {}}
-                        transition={{ delay: 0.3, duration: 0.8 }}
-                    >
-                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 backdrop-blur-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            <span className="text-xs font-medium text-primary tracking-wide uppercase">My Arsenal</span>
-          </div>
-                     
-                    </motion.div>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-2">
-                        Skills<span className="text-primary">.</span>
+                    {/* Subtitle Badge */}
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 backdrop-blur-sm">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                        <span className="text-xs font-medium text-primary tracking-wide uppercase">
+                            Arsenal
+                        </span>
+                    </div>
+
+                    <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
+                        <span className="text-white">My </span>
+                        <span className="bg-gradient-to-r from-primary via-purple-500 to-purple-600 bg-clip-text text-transparent">
+                            Skills
+                        </span>
                     </h2>
+
+                    {/* Animated Gradient Underline */}
                     <motion.div
-                        className="w-20 h-1 bg-gradient-to-r from-primary to-purple-500 mx-auto mt-4 rounded-full"
+                        className="h-1 bg-gradient-to-r from-primary to-purple-500 mx-auto mt-4 rounded-full"
                         initial={{ width: 0 }}
-                        animate={isInView ? { width: 80 } : {}}
-                        transition={{ delay: 0.5, duration: 0.8 }}
+                        animate={isInView ? { width: 80 } : { width: 0 }}
+                        transition={{ delay: 0.3, duration: 0.8 }}
                     />
-                    <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-sm md:text-base">
-                        Technologies and tools I work with to build amazing digital experiences
+
+                    <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-base text-slate-400 leading-relaxed px-4">
+                         Technologies and tools I work with to build amazing digital experiences.
                     </p>
                 </motion.div>
+
+
 
                 {/* Skills Slider */}
                 <div className="relative">
