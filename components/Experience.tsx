@@ -166,11 +166,11 @@ export default function Experience() {
           
           <h2 className="text-5xl sm:text-6xl font-bold tracking-tight mb-4">
             <span className="text-white">My </span>
-            <span className="bg-gradient-to-r from-primary via-primary to-purple-600 bg-clip-text text-transparent">Experience</span>
+            <span className="bg-linear-to-r from-primary via-primary to-purple-600 bg-clip-text text-transparent">Experience</span>
           </h2>
           
           {/* Gradient Underline */}
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-purple-500 mx-auto mt-4 rounded-full"></div>
+          <div className="w-20 h-1 bg-linear-to-r from-primary to-purple-500 mx-auto mt-4 rounded-full"></div>
           
           <p className="mt-4 max-w-2xl mx-auto text-slate-400 leading-relaxed">
             My professional journey working with modern web technologies and real-world development teams.
@@ -188,7 +188,7 @@ export default function Experience() {
         <div className="relative pl-0 md:pl-32">
           
           {/* Gradient Vertical Timeline Line */}
-          <div className="hidden md:block absolute left-24 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-primary/40 to-transparent" />
+          <div className="hidden md:block absolute left-24 top-0 bottom-0 w-0.5 bg-linear-to-b from-transparent via-primary/40 to-transparent" />
 
           {/* Cards Stack */}
           <div className="space-y-12">
