@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-// এখানে Variants ইম্পোর্ট করা হয়েছে
 import { motion, useInView, Variants } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
@@ -36,7 +35,7 @@ export default function About() {
         }
     }, [isInView]);
 
-    // টাইপস্ক্রিপ্ট এরর দূর করতে : Variants যোগ করা হয়েছে
+  
     const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
@@ -73,7 +72,7 @@ export default function About() {
     };
 
     return (
-        <section id="about" className="relative py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
+        <section id="about" className="relative py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-linear-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
             {/* Background Decorations */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute -top-20 -right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
@@ -83,34 +82,42 @@ export default function About() {
 
             <div ref={ref} className="container mx-auto relative z-10">
                 {/* Section Header */}
-                <motion.div
+
+
+
+                 <motion.div 
+                    className="text-center mb-12 sm:mb-16"
                     initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-12 md:mb-16"
                 >
+                    {/* Subtitle Badge */}
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 backdrop-blur-sm">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                        <span className="text-xs font-medium text-primary tracking-wide uppercase">
+                            About Me
+                        </span>
+                    </div>
+
+                    <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
+                        <span className="text-white">Know </span>
+                        <span className="bg-linear-to-r from-primary via-purple-500 to-purple-600 bg-clip-text text-transparent">
+                            Me
+                        </span>
+                    </h2>
+
+                    {/* Animated Gradient Underline */}
                     <motion.div
-                        className="inline-block"
-                        initial={{ scaleX: 0 }}
-                        animate={isInView ? { scaleX: 1 } : {}}
-                        transition={{ delay: 0.3, duration: 0.8 }}
-                    >
-                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 backdrop-blur-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            <span className="text-xs font-medium text-primary tracking-wide uppercase">About Me</span>
-          </div>
-                        
-                    </motion.div>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-2">
-                        Know Me<span className="text-primary">.</span>
-                    </h1>
-                    <motion.div
-                        className="w-20 h-1 bg-gradient-to-r from-primary to-purple-500 mx-auto mt-4 rounded-full"
+                        className="h-1 bg-linear-to-r from-primary to-purple-500 mx-auto mt-4 rounded-full"
                         initial={{ width: 0 }}
-                        animate={isInView ? { width: 80 } : {}}
-                        transition={{ delay: 0.5, duration: 0.8 }}
+                        animate={isInView ? { width: 80 } : { width: 0 }}
+                        transition={{ delay: 0.3, duration: 0.8 }}
                     />
                 </motion.div>
+
+
+
+
 
                 {/* Main Content */}
                 <motion.div
@@ -120,10 +127,10 @@ export default function About() {
                     className="flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-16"
                 >
                     {/* Image Section */}
-                    <motion.div variants={itemVariants} className="flex-shrink-0">
+                    <motion.div variants={itemVariants} className="shrink-0">
                         <div className="relative group mt-2">
                             {/* Glowing Ring */}
-                            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-primary via-purple-500 to-primary opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500"></div>
+                            <div className="absolute -inset-4 rounded-3xl bg-linear-to-r from-primary via-purple-500 to-primary opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500"></div>
                             
                             {/* Main Image Container */}
                             <div className="relative w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-2xl overflow-hidden border-4 border-primary/30 shadow-2xl hover:shadow-primary/20 transition-all duration-500 group-hover:scale-105 group-hover:border-primary/60">
@@ -136,7 +143,7 @@ export default function About() {
                                     }}
                                 />
                                 {/* Gradient Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                <div className="absolute inset-0 bg-linear-to-t from-gray-900/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             </div>
                         </div>
                     </motion.div>
@@ -186,7 +193,7 @@ export default function About() {
                                     whileHover={{ y: -5 }}
                                 >
                                     {/* Background Glow */}
-                                    <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    <div className="absolute inset-0 bg-linear-to-b from-primary/5 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                     
                                     <div className="relative z-10">
                                         <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary">
@@ -208,7 +215,7 @@ export default function About() {
                         >
                             <motion.a
                                 href="#contact"
-                                className="group relative inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-primary to-purple-600 text-white font-medium rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 overflow-hidden"
+                                className="group relative inline-flex items-center gap-2 px-8 py-3 bg-linear-to-r from-primary to-purple-600 text-white font-medium rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 overflow-hidden"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
@@ -220,7 +227,7 @@ export default function About() {
                                 >
                                     →
                                 </motion.span>
-                                <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                <div className="absolute inset-0 bg-linear-to-r from-primary to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </motion.a>
                             
                             <motion.a
